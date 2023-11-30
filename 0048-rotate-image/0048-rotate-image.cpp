@@ -5,6 +5,7 @@ public:
         // Reversed with rows with column
         for (int i = 0;i < n;i++) {
             for (int j = i;j < n;j++) {
+                if (i==j) continue;
                 swap(m[i][j], m[j][i]);
             }
         }
