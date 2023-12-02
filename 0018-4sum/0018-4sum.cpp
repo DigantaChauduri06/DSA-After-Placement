@@ -23,9 +23,9 @@ public:
                     }
                     while (k < n - 1 && nums[k] == nums[k+1]) k+=1;
                 }
-                while (j < n - 1 && nums[j] == nums[j+1]) j+=1;
+                while (j < n - 2 && nums[j] == nums[j+1]) j+=1;
             }
-            while (i < n - 1 && nums[i] == nums[i+1]) i+=1;
+            while (i < n - 3 && nums[i] == nums[i+1]) i+=1;
         }
         return ans;
     }
