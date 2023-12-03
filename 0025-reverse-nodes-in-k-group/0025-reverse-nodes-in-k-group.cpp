@@ -26,6 +26,7 @@ public:
         int cnt = 0;
         ListNode *itr = head;
         ListNode *prev = head;
+        ListNode *prevHead = head;
         while (itr && cnt < k) {
             cnt++;
             prev = itr;
@@ -34,8 +35,8 @@ public:
         if (cnt != k) return head;
         prev->next = NULL;
         ListNode* curHead = reverseKGroup(itr, k);
-        ListNode* returnedHead = reverseLL(head);
-        head->next = curHead;
+        ListNode* returnedHead = reverseLL(prevHead);
+        prevHead->next = curHead;
         return returnedHead;
     }
 };
