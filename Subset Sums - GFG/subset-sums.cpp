@@ -6,25 +6,20 @@ using namespace std;
 class Solution
 {
     vector<int> ans;
-    int sm = 0;
-    void helper(vector<int> &arr, int N, int i) {
-        if (i >= N) {
-            // ans.push_back(sm);
-            ans.push_back(sm);
+    void helper(vector<int> &arr, int i = 0, int sum = 0) {
+        if (i >= arr.size()) {
+            ans.push_back(sum);
             return;
         }
-        sm += arr[i];
-        helper(arr, N, i+1);
-        sm -= arr[i];
-        helper(arr, N, i+1);
+        // Take
+        helper(arr, i+1, sum + arr[i]);
+        // Non Take
+        helper(arr, i+1, sum);
     }
-    
 public:
     vector<int> subsetSums(vector<int> arr, int N) {
         // Write Your Code here
-        helper(arr, N, 0);
-        sort(ans.begin(), ans.end());
-        // cout << ans.size() << endl;
+        helper(arr);
         return ans;
     }
 };
