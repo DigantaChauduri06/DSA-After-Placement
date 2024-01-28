@@ -6,15 +6,12 @@ public:
         vector<vector<int>> anasList;
         map<vector<int>, vector<string>> mapp;
         vector<vector<string>> ans;
-        for (auto &s : strs) {
+        for (int i = 0;i < strs.size();i++) {
             vector<int> anas(26, 0);
-            for (char ch : s) {
+            for (char ch : strs[i]) {
                 anas[ch - 'a']++;
             }
-            anasList.push_back(anas);
-        }
-        for (int i = 0;i < anasList.size();i++) {
-            mapp[anasList[i]].push_back(strs[i]);
+            mapp[anas].push_back(strs[i]);
         }
         for (const auto &[_, value] : mapp) {
             ans.push_back(value);
