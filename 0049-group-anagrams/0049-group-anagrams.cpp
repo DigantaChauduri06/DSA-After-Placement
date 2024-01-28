@@ -3,7 +3,6 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         // vector<vector<int>> anas
         // vector<int> ->  strs[]
-        vector<vector<int>> anasList;
         map<vector<int>, vector<string>> mapp;
         vector<vector<string>> ans;
         for (int i = 0;i < strs.size();i++) {
