@@ -6,9 +6,9 @@ public:
         int longest = 1;
         for (auto n: nums) {
             // Check in both sides 
-            int cnt = 1;
+            int cnt = 0;
             int num = n;
-            while (set.find(num-1) != set.end()) {
+            while (set.find(num) != set.end()) {
                 set.erase(num);
                 num--;
                 cnt++;
