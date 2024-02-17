@@ -37,7 +37,6 @@ public:
         sort(begin(nums), end(nums));
         nums[0] = -nums[0];
         return sumOfNumbers(nums);
-        // [-2,-2,0,2,5]
         
     }
 };
